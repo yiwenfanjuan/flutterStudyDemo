@@ -22,6 +22,7 @@ class TextFieldDemoState extends State<TextFieldFulDemo> {
   //焦点控制
   final FocusNode _phoneFocusNode = FocusNode();
   final FocusNode _passwordFocusNode = FocusNode();
+  final FocusNode _emailFocusNode = FocusNode();//邮箱输入框焦点控制的Node
   FocusScopeNode _focusScopeNode;
 
   TextFieldDemoState({String defaultText}) {
@@ -30,15 +31,35 @@ class TextFieldDemoState extends State<TextFieldFulDemo> {
       baseOffset: _controller.text?.length > 0 ? 1 : 0,
       extentOffset: _controller.text?.length > 0 ? _controller.text?.length : 0,
     );
-    //设置Theme中的颜色
-  }
 
-  @override
-  Widget build(BuildContext context) {
     _phoneFocusNode.addListener(() {
       print("焦点状态改变：${_phoneFocusNode.hasFocus ? '昵称输入框获得焦点' : "昵称输入框失去焦点"}");
     });
 
+    //邮箱输入框添加焦点改变时的操作
+    _emailFocusNode.addListener(() {
+      print("邮箱输入框焦点:${_emailFocusNode.hasFocus}");
+      _emailGetFocus(_emailFocusNode.hasFocus);
+    });
+  }
+
+  //邮箱输入框的底部颜色
+  Color _mInputEmailUnderLineColor = Colors.grey[400];
+
+  //当状态改变时进行的回调
+  void _emailGetFocus(bool getFocus) {
+    print("邮箱输入框焦点事件：$getFocus");
+    setState(() {
+      if (getFocus) {
+        _mInputEmailUnderLineColor = Colors.limeAccent[700];
+      } else {
+        _mInputEmailUnderLineColor = Colors.grey[400];
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
@@ -55,16 +76,6 @@ class TextFieldDemoState extends State<TextFieldFulDemo> {
       resizeToAvoidBottomPadding: true,
       body: Padding(
         padding: EdgeInsets.all(10.0),
-        /*
-        child: Theme(
-            data: Theme.of(context).copyWith(
-                hintColor: Colors.red, //定义下划线颜色
-                inputDecorationTheme: InputDecorationTheme(
-                    labelStyle: TextStyle(color: Colors.grey), //定义label字体样式
-                    hintStyle:
-                        TextStyle(color: Colors.grey, fontSize: 14.0) //定义提示文本样式
-                    )),
-                    */
         child: Column(
           //靠左边对齐
           mainAxisAlignment: MainAxisAlignment.start,
@@ -154,13 +165,6 @@ class TextFieldDemoState extends State<TextFieldFulDemo> {
                     hintStyle: TextStyle(
                       color: Colors.blue,
                     ),
-                    //设置的border没有用效果
-                    /*
-                border:UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.orangeAccent,width: 6.0),
-                  borderRadius: BorderRadius.circular(3.0)
-                ),
-                */
                     border: OutlineInputBorder(
                       borderSide:
                           BorderSide(color: Colors.orangeAccent, width: 10.0),
@@ -173,26 +177,24 @@ class TextFieldDemoState extends State<TextFieldFulDemo> {
             Container(
               margin: EdgeInsets.only(top: 10.0),
               child: TextField(
+                focusNode: _emailFocusNode,
                 keyboardType: TextInputType.emailAddress,
-              
                 decoration: InputDecoration(
                   labelText: "邮箱",
                   labelStyle: TextStyle(color: Colors.blue, fontSize: 16.0),
                   hintText: "请输入您的邮箱",
                   hintStyle:
                       TextStyle(color: Colors.deepPurple, fontSize: 12.0),
-                  border: null, //隐藏下划线
+                  border: InputBorder.none, //隐藏下划线
                 ),
               ),
               decoration: BoxDecoration(
                 border: Border(
-                    bottom: BorderSide(color: Colors.grey[700], width: 1.0)),
+                    bottom: BorderSide(color: _mInputEmailUnderLineColor, width: 5.0)),
               ),
+              
             ),
           ],
-          /*
-            )
-            */
         ),
       ),
       floatingActionButton: new Theme(

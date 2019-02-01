@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'normal_app_bar.dart';
 import "package:english_words/english_words.dart";
 import 'textFieldDemo.dart';
+import 'formDemo.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -36,7 +37,7 @@ class TestRouteWidget1 extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Row(
+      body: Column(
         children: <Widget>[
           FlatButton(
             child: Text("跳转到TestTextField页面"),
@@ -50,10 +51,19 @@ class TestRouteWidget1 extends StatelessWidget {
                 return TextFieldFulDemo();
               }));
             
-              
-             
             },
-          )
+          ),
+          RaisedButton(
+            onPressed: (){
+              //跳转到formDemo页面
+              Navigator.push(context,MaterialPageRoute(
+                builder: (context){
+                  return TestFormWidget();
+                }
+              ));
+            },
+            child: Text("跳转到formDemo页面"),
+          ),
         ],
       ),
     );
