@@ -197,12 +197,6 @@ class TextFieldDemoState extends State<TextFieldFulDemo> {
           ],
         ),
       ),
-      floatingActionButton: new Theme(
-        data: Theme.of(context).copyWith(accentColor: Colors.yellow),
-        child: new FloatingActionButton(
-          child: new Icon(Icons.phonelink_off),
-        ),
-      ),
     );
   }
 }

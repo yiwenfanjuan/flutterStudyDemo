@@ -13,7 +13,7 @@ import 'formDemo.dart';
 //void main() => runApp(TextFieldDemo());
 
 //首页，路由管理
-main(List<String> args) => runApp(RouteTestWidget());
+main() => runApp(RouteTestWidget());
 
 //路由管理test,通过当前页面的按钮跳转到另一个页面
 class RouteTestWidget extends StatelessWidget {
@@ -54,16 +54,15 @@ class TestRouteWidget1 extends StatelessWidget {
             },
           ),
           RaisedButton(
+            child: Text("Form表单测试"),
             onPressed: (){
-              //跳转到formDemo页面
-              Navigator.push(context,MaterialPageRoute(
-                builder: (context){
+              //跳转到表单测试页面
+              Navigator.push(context, 
+                MaterialPageRoute(builder: (context){
                   return TestFormWidget();
-                }
-              ));
+                }));
             },
-            child: Text("跳转到formDemo页面"),
-          ),
+          )
         ],
       ),
     );
