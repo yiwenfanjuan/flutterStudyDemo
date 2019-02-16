@@ -4,6 +4,7 @@ import "package:english_words/english_words.dart";
 import 'textFieldDemo.dart';
 import 'formDemo.dart';
 import 'lineLayoutDemo.dart';
+import 'flexDemo.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -72,7 +73,16 @@ class TestRouteWidget1 extends StatelessWidget {
                   return TestLinearLayout();
               }));
             },
-          )
+          ),
+          RaisedButton(
+            child: Text("弹性布局测试"),
+            onPressed: (){
+              //点击跳转到弹性布局测试页面
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return FlexLayoutDemo();
+              }));
+            },
+          ),
         ],
       ),
     );
