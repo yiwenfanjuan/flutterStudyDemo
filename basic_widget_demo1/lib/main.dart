@@ -3,6 +3,7 @@ import 'normal_app_bar.dart';
 import "package:english_words/english_words.dart";
 import 'textFieldDemo.dart';
 import 'formDemo.dart';
+import 'lineLayoutDemo.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -61,6 +62,15 @@ class TestRouteWidget1 extends StatelessWidget {
                 MaterialPageRoute(builder: (context){
                   return TestFormWidget();
                 }));
+            },
+          ),
+          RaisedButton(
+            child: Text("线性布局测试"),
+            onPressed: (){
+              //跳转到线性布局测试页面
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return TestLinearLayout();
+              }));
             },
           )
         ],
