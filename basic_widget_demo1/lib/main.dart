@@ -5,6 +5,8 @@ import 'textFieldDemo.dart';
 import 'formDemo.dart';
 import 'lineLayoutDemo.dart';
 import 'flexDemo.dart';
+import 'wrapDemo.dart';
+import 'flowLayoutDemo.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -40,6 +42,8 @@ class TestRouteWidget1 extends StatelessWidget {
         centerTitle: true,
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           FlatButton(
             child: Text("跳转到TestTextField页面"),
@@ -83,6 +87,25 @@ class TestRouteWidget1 extends StatelessWidget {
               }));
             },
           ),
+          //流式布局测试
+          RaisedButton(
+            child: Text("流式布局Wrap测试",),
+            onPressed: (){
+              //点击跳转到流式布局页面
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return WrapLayoutDemo();
+              }));
+            },
+          ),
+          RaisedButton(
+            child: Text("流式布局Flow测试"),
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return FlowLayoutDemo();
+
+              }));
+            },
+          )
         ],
       ),
     );
