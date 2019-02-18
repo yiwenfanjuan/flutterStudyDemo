@@ -7,6 +7,7 @@ import 'lineLayoutDemo.dart';
 import 'flexDemo.dart';
 import 'wrapDemo.dart';
 import 'flowLayoutDemo.dart';
+import 'stackLayoutDemo.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -103,6 +104,14 @@ class TestRouteWidget1 extends StatelessWidget {
               Navigator.push(context, MaterialPageRoute(builder: (context){
                 return FlowLayoutDemo();
 
+              }));
+            },
+          ),
+          RaisedButton(
+            child: Text("层叠布局测试"),
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return StackLayoutDemo();
               }));
             },
           )
