@@ -8,6 +8,7 @@ import 'flexDemo.dart';
 import 'wrapDemo.dart';
 import 'flowLayoutDemo.dart';
 import 'stackLayoutDemo.dart';
+import 'containerWidget/PaddingDemo.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -112,6 +113,14 @@ class TestRouteWidget1 extends StatelessWidget {
             onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context){
                 return StackLayoutDemo();
+              }));
+            },
+          ),
+          RaisedButton(
+            child: Text("Padding测试"),
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return PaddingDemo();
               }));
             },
           )
