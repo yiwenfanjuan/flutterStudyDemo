@@ -9,6 +9,7 @@ import 'wrapDemo.dart';
 import 'flowLayoutDemo.dart';
 import 'stackLayoutDemo.dart';
 import 'containerWidget/PaddingDemo.dart';
+import 'containerWidget/SizeBox.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -121,6 +122,14 @@ class TestRouteWidget1 extends StatelessWidget {
             onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context){
                 return PaddingDemo();
+              }));
+            },
+          ),
+          RaisedButton(
+            child: Text("ConstrainedBox和SizeBox测试"),
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return SizeBoxDemo();
               }));
             },
           )
