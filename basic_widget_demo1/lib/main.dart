@@ -11,6 +11,7 @@ import 'stackLayoutDemo.dart';
 import 'containerWidget/PaddingDemo.dart';
 import 'containerWidget/SizeBox.dart';
 import 'containerWidget/DecoratedBoxDemo.dart';
+import 'containerWidget/TransformDemo.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -45,102 +46,123 @@ class TestRouteWidget1 extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Column(
+      body: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          FlatButton(
-            child: Text("跳转到TestTextField页面"),
-            textColor: Colors.lightGreenAccent,
-            textTheme: ButtonTextTheme.accent,
-            onPressed: () {
-              print("点击跳转到TestTextField页面");
-            
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return TextFieldFulDemo();
-              }));
-            
-            },
-          ),
-          RaisedButton(
-            child: Text("Form表单测试"),
-            onPressed: (){
-              //跳转到表单测试页面
-              Navigator.push(context, 
-                MaterialPageRoute(builder: (context){
-                  return TestFormWidget();
-                }));
-            },
-          ),
-          RaisedButton(
-            child: Text("线性布局测试"),
-            onPressed: (){
-              //跳转到线性布局测试页面
-              Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return TestLinearLayout();
-              }));
-            },
-          ),
-          RaisedButton(
-            child: Text("弹性布局测试"),
-            onPressed: (){
-              //点击跳转到弹性布局测试页面
-              Navigator.push(context, MaterialPageRoute(builder: (context){
-                return FlexLayoutDemo();
-              }));
-            },
-          ),
-          //流式布局测试
-          RaisedButton(
-            child: Text("流式布局Wrap测试",),
-            onPressed: (){
-              //点击跳转到流式布局页面
-              Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return WrapLayoutDemo();
-              }));
-            },
-          ),
-          RaisedButton(
-            child: Text("流式布局Flow测试"),
-            onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context){
-                return FlowLayoutDemo();
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              FlatButton(
+                child: Text("跳转到TestTextField页面"),
+                textColor: Colors.lightGreenAccent,
+                textTheme: ButtonTextTheme.accent,
+                onPressed: () {
+                  print("点击跳转到TestTextField页面");
 
-              }));
-            },
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (BuildContext context) {
+                    return TextFieldFulDemo();
+                  }));
+                },
+              ),
+              RaisedButton(
+                child: Text("Form表单测试"),
+                onPressed: () {
+                  //跳转到表单测试页面
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return TestFormWidget();
+                  }));
+                },
+              ),
+              RaisedButton(
+                child: Text("线性布局测试"),
+                onPressed: () {
+                  //跳转到线性布局测试页面
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return TestLinearLayout();
+                  }));
+                },
+              ),
+              RaisedButton(
+                child: Text("弹性布局测试"),
+                onPressed: () {
+                  //点击跳转到弹性布局测试页面
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return FlexLayoutDemo();
+                  }));
+                },
+              ),
+              //流式布局测试
+              RaisedButton(
+                child: Text(
+                  "流式布局Wrap测试",
+                ),
+                onPressed: () {
+                  //点击跳转到流式布局页面
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return WrapLayoutDemo();
+                  }));
+                },
+              ),
+              RaisedButton(
+                child: Text("流式布局Flow测试"),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return FlowLayoutDemo();
+                  }));
+                },
+              ),
+              RaisedButton(
+                child: Text("层叠布局测试"),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return StackLayoutDemo();
+                  }));
+                },
+              ),
+              RaisedButton(
+                child: Text("Padding测试"),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return PaddingDemo();
+                  }));
+                },
+              ),
+              RaisedButton(
+                child: Text("ConstrainedBox和SizeBox测试"),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return SizeBoxDemo();
+                  }));
+                },
+              ),
+              RaisedButton(
+                child: Text("装饰容器DecoratedBox"),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return DecoratedBoxDemo();
+                  }));
+                },
+              )
+            ],
           ),
-          RaisedButton(
-            child: Text("层叠布局测试"),
-            onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context){
-                return StackLayoutDemo();
-              }));
-            },
-          ),
-          RaisedButton(
-            child: Text("Padding测试"),
-            onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context){
-                return PaddingDemo();
-              }));
-            },
-          ),
-          RaisedButton(
-            child: Text("ConstrainedBox和SizeBox测试"),
-            onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return SizeBoxDemo();
-              }));
-            },
-          ),
-          RaisedButton(
-            child: Text("装饰容器DecoratedBox"),
-            onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context){
-                return DecoratedBoxDemo();
-              }));
-            },
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
+              RaisedButton(
+                child: Text("Transform变换"),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context){
+                      return TransformDemo();
+                    }
+                  ));
+                },
+              )
+            ],
           )
         ],
       ),

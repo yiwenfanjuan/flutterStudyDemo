@@ -21,7 +21,7 @@ class LinearLayoutInfo extends StatelessWidget {
     return Column(
       //对于Column来说：主轴表示的是垂直方向，纵轴表示的是水平方向,纵轴方向默认填充可用的最大空间
       //主轴（垂直方向）大小，使用内容大小，当值为max时使用可用的最大空间
-      mainAxisSize: MainAxisSize.min,
+      mainAxisSize: MainAxisSize.max,
       //主轴（垂直方向）对齐方式：当使用主轴大小为min时不起作用
       mainAxisAlignment: MainAxisAlignment.center,
 
@@ -29,7 +29,7 @@ class LinearLayoutInfo extends StatelessWidget {
       verticalDirection: VerticalDirection.up,
 
       //纵轴方向对齐方式：对于Column来说即为水平方向的对齐方式
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         //用户名信息
         Row(
