@@ -10,6 +10,7 @@ import 'flowLayoutDemo.dart';
 import 'stackLayoutDemo.dart';
 import 'containerWidget/PaddingDemo.dart';
 import 'containerWidget/SizeBox.dart';
+import 'containerWidget/DecoratedBoxDemo.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -130,6 +131,14 @@ class TestRouteWidget1 extends StatelessWidget {
             onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context){
                   return SizeBoxDemo();
+              }));
+            },
+          ),
+          RaisedButton(
+            child: Text("装饰容器DecoratedBox"),
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return DecoratedBoxDemo();
               }));
             },
           )
