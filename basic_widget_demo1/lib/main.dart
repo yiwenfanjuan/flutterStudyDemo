@@ -12,6 +12,8 @@ import 'containerWidget/PaddingDemo.dart';
 import 'containerWidget/SizeBox.dart';
 import 'containerWidget/DecoratedBoxDemo.dart';
 import 'containerWidget/TransformDemo.dart';
+import 'containerWidget/ContainerDemo.dart';
+import 'containerWidget/OtherContainerWidgetDemo.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -158,6 +160,26 @@ class TestRouteWidget1 extends StatelessWidget {
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context){
                       return TransformDemo();
+                    }
+                  ));
+                },
+              ),
+              RaisedButton(
+                child: Text("Container Demo演示"),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context){
+                      return ContainerDemo();
+                    }
+                  ));
+                },
+              ),
+              RaisedButton(
+                child: Text("其它容器类widget Demo 演示"),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context){
+                      return OtherContainerWidgetDemo();
                     }
                   ));
                 },
