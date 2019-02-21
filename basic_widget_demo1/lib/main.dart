@@ -14,6 +14,7 @@ import 'containerWidget/DecoratedBoxDemo.dart';
 import 'containerWidget/TransformDemo.dart';
 import 'containerWidget/ContainerDemo.dart';
 import 'containerWidget/OtherContainerWidgetDemo.dart';
+import 'ScrollWidget/SingleScrollViewDemo.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -48,7 +49,10 @@ class TestRouteWidget1 extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Row(
+      body: Scrollbar(
+        child:SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+           child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -183,10 +187,23 @@ class TestRouteWidget1 extends StatelessWidget {
                     }
                   ));
                 },
+              ),
+              RaisedButton(
+                child: Text("SingleChildScrollView demo演示"),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (context){
+                        return SingleScrollViewDemo();
+                      }
+                  ));
+                },
               )
             ],
           )
         ],
+      ),
+        ),
+       
       ),
     );
   }
