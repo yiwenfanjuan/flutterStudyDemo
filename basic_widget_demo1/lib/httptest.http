@@ -1,0 +1,5 @@
+
+POST http://shop-api-f.netmi.com.cn/order/me-refund-api/refund-list
+Content-Type: application/x-www-form-urlencoded
+
+token=5754a00ac19d215ac86efbdd0cf83db2d4851a5b

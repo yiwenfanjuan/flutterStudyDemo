@@ -17,6 +17,10 @@ import 'containerWidget/OtherContainerWidgetDemo.dart';
 import 'ScrollWidget/SingleScrollViewDemo.dart';
 import 'ScrollWidget/ListViewDemo.dart';
 import 'ScrollWidget/ListViewInstanceDemo.dart';
+import 'ScrollWidget/GridViewDemo.dart';
+import 'ScrollWidget/CustomScrollViewDemo.dart';
+import 'ScrollWidget/ScrollControllerDemo.dart';
+import 'ScrollWidget/ScrollNotificationDemo.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -224,7 +228,58 @@ class TestRouteWidget1 extends StatelessWidget {
                       },
                   ),
                 ],
-              )
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  RaisedButton(
+                    child: Text("GridView demo测试"),
+                    onPressed: (){
+                      Navigator.push(context,
+                        MaterialPageRoute(
+                          builder: (context){
+                            return GridViewDemo();
+                          }
+                        ),
+                      );
+                    },
+                  ),
+
+
+                  RaisedButton(
+                    child: Text("CustomScrollView Demo演示"),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context){
+                            return CustomScrollViewDemo();
+                        }
+                      ));
+                    },
+                  ),
+
+                  RaisedButton(
+                    child: Text("ScrollController Demo演示"),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context){
+                          return ScrollControllerDemo();
+                        }
+                      ));
+                    },
+                  ),
+                  RaisedButton(
+                    child: Text("Scrollable Widget 滚动监听"),
+                    onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context){
+                            return ScrollNotificationTestRoute();
+                          }
+                        ));
+                    },
+                  ),
+                ],
+              ),
             ],
           ),
         ),
