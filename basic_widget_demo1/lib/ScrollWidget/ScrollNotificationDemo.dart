@@ -30,10 +30,12 @@ class _ScrollNotificationTestRouteState
 
             //查看是否滚动到顶部
             //extentBefore表示会出ViewPort的长度
+            //这种方法计算的不准
             if(notification.metrics.atEdge && notification.metrics.extentBefore <= 0){
               print("滚动到列表顶部");
             }
             //extentAfter表示未滑入到ViewPort的部分
+            //这种方法计算的不准
             if(notification.metrics.atEdge && notification.metrics.extentAfter <= 0){
               print("滚动到列表底部");
             }

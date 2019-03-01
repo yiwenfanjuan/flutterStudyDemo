@@ -21,6 +21,9 @@ import 'ScrollWidget/GridViewDemo.dart';
 import 'ScrollWidget/CustomScrollViewDemo.dart';
 import 'ScrollWidget/ScrollControllerDemo.dart';
 import 'ScrollWidget/ScrollNotificationDemo.dart';
+import 'functionWidget/WillPopScopeWidgetDemo.dart';
+import 'functionWidget/InheritedWidgetDemo.dart';
+import 'functionwidget/ThemeDataDemo.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -278,6 +281,40 @@ class TestRouteWidget1 extends StatelessWidget {
                         ));
                     },
                   ),
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  RaisedButton(
+                    child: Text("返回键拦截事件WillPopScope"),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context){
+                            return WillPopScopeDemo();
+                        }
+                      ));
+                    },
+                  ),
+                  RaisedButton(
+                    child: Text("数据共享InheritedWidget"),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context){
+                          return TestInheritedWidgetRoute();
+                        }
+                      ));
+                    },
+                  ),
+                  RaisedButton(
+                    child: Text("主题--Theme Demo演示"),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context){
+                          return ThemeDataDemo();
+                        }
+                      ));
+                    },
+                  )
                 ],
               ),
             ],
