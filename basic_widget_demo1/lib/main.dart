@@ -24,6 +24,7 @@ import 'ScrollWidget/ScrollNotificationDemo.dart';
 import 'functionWidget/WillPopScopeWidgetDemo.dart';
 import 'functionWidget/InheritedWidgetDemo.dart';
 import 'functionwidget/ThemeDataDemo.dart';
+import 'event/EventDemo1.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -312,6 +313,20 @@ class TestRouteWidget1 extends StatelessWidget {
                         builder: (context){
                           return ThemeDataDemo();
                         }
+                      ));
+                    },
+                  )
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  RaisedButton(
+                    child: Text("PointerEvent Demo测试"),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(
+                          builder: (context){
+                            return EventDemo1();
+                          }
                       ));
                     },
                   )
