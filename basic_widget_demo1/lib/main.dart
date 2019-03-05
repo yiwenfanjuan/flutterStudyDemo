@@ -25,6 +25,9 @@ import 'functionWidget/WillPopScopeWidgetDemo.dart';
 import 'functionWidget/InheritedWidgetDemo.dart';
 import 'functionwidget/ThemeDataDemo.dart';
 import 'event/EventDemo1.dart';
+import 'event/GestureDetectorDemo.dart';
+import 'event/GestureDetectorDemo1.dart';
+import 'event/GestureDetectorDemo2.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -327,6 +330,36 @@ class TestRouteWidget1 extends StatelessWidget {
                           builder: (context){
                             return EventDemo1();
                           }
+                      ));
+                    },
+                  ),
+                  RaisedButton(
+                    child: Text("GestureDetector Demo测试"),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context){
+                          return GestureDetectorDemo();
+                        }
+                      ));
+                    },
+                  ),
+                  RaisedButton(
+                    child: Text("GestureDetector 手势识别-滑动/拖动事件 Demo演示"),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context){
+                          return GestureDetectorDemo1();
+                        }
+                      ));
+                    },
+                  ),
+                  RaisedButton(
+                    child: Text("GestureDetector 手势识别-竞争和冲突"),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context){
+                          return GestureDetectorDemo2();
+                        }
                       ));
                     },
                   )
