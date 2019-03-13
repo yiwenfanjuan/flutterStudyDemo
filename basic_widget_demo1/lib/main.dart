@@ -28,6 +28,14 @@ import 'event/EventDemo1.dart';
 import 'event/GestureDetectorDemo.dart';
 import 'event/GestureDetectorDemo1.dart';
 import 'event/GestureDetectorDemo2.dart';
+import 'event/EventPageDemo1.dart';
+import 'event/EventPageDemo2.dart';
+import 'event/NotificationDemo.dart';
+import 'event/NotificationCustom.dart';
+import 'animation/AnimationDemo1.dart';
+import 'animation/ScaleImageDemo.dart' as scaleImage;
+import 'animation/AnimationDemo2.dart';
+import 'animation/AnimationDemo3.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -362,7 +370,112 @@ class TestRouteWidget1 extends StatelessWidget {
                         }
                       ));
                     },
-                  )
+                  ),
+                  RaisedButton(
+                    child: Text("全局事件总线测试页面1"),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context){
+                          return EventPageDemo1();
+                        }
+                      ));
+                    },
+                  ),
+                  RaisedButton(
+                    child: Text("全局事件总线测试页面2"),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context){
+                          return EventPageDemo2();
+                        }
+                      ));
+                    },
+                  ),
+                  RaisedButton(
+                    child: Text("Notification 测试demo"),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context){
+                          return NotificationDemo();
+                        }
+                      ));
+                    },
+                  ),
+                  RaisedButton(
+                      child: Text("自定义Notification 测试Demo"),
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context){
+                            return CustomNotificationDemo();
+                          }
+                        ));
+                      },
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text("动画demo演示",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.blue,
+                      fontWeight: FontWeight.w200,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left:30.0,right:20.0,top:10.0,bottom:10.0),
+                    child: RaisedButton(
+                      child: Text("一个图片逐渐放大的动画"),
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context){
+                            return ScaleAnimationRoute();
+                          }
+                        ));
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top:10.0,bottom:10.0,left:10.0,right:10.0),
+                    child: RaisedButton(
+                      child: Text("使用AnimatedWidget和AnimatedBuilder重构图片放大动画"),
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context){
+                            return scaleImage.ScaleAnimationDemo();
+                          }
+                        ));
+                      },
+                    ),
+                  ),
+                  Padding(
+                      padding: EdgeInsets.all(20.0),
+                      child: RaisedButton(
+                        child: Text("使用AnimatedBuilder封装Widget"),
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context){
+                              return AnimationDemo2();
+                            }
+                          ));
+                        },
+                      ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: RaisedButton(
+                      child: Text("动画状态监听-循环执行的动画"),
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context){
+                            return AnimationDemo3();
+                          }
+                        ));
+                      },
+                    ),
+                  ),
                 ],
               ),
             ],
