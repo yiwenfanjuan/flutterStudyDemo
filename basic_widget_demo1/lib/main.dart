@@ -36,6 +36,10 @@ import 'animation/AnimationDemo1.dart';
 import 'animation/ScaleImageDemo.dart' as scaleImage;
 import 'animation/AnimationDemo2.dart';
 import 'animation/AnimationDemo3.dart';
+import 'animation/PageRouteTestDemo.dart';
+import 'package:flutter/cupertino.dart';
+import 'animation/MyPageRouteBuilder.dart';
+import 'animation/HeroAnimationPage1.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -471,6 +475,53 @@ class TestRouteWidget1 extends StatelessWidget {
                         Navigator.push(context, MaterialPageRoute(
                           builder: (context){
                             return AnimationDemo3();
+                          }
+                        ));
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: RaisedButton(
+                      child: Text("页面切换效果演示"),
+                      onPressed: (){
+                        //使用IOS风格的路由切换
+                        /*
+                        Navigator.push(context,CupertinoPageRoute(
+                          builder: (context){
+                            return PageRouteDemo();
+                          }
+                        ));
+                        */
+                        //使用自定义的渐隐渐入的动画进行路由切换
+                        /*
+                        Navigator.push(context, PageRouteBuilder(
+                          transitionDuration: Duration(microseconds: 5000),//动画执行时间为500毫秒
+                          pageBuilder: (context,animation,backAnimation){
+                            return FadeTransition(//使用渐隐渐入过程
+                                opacity: animation,
+                                child: PageRouteDemo(),
+                            );
+                          }
+                        ));
+                        */
+                        //通过继承PageRoute实现路由切换
+                        Navigator.push(context, MyPageRouteBuilder(
+                          builder: (context){
+                            return PageRouteDemo();
+                          }
+                        ));
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: RaisedButton(
+                      child: Text("Hero动画演示demo"),
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context){
+                            return HeroAnimationRoutePage1();
                           }
                         ));
                       },
