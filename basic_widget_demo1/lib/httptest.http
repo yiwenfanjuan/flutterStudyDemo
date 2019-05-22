@@ -1,5 +1,6 @@
 
-POST http://shop-api-f.netmi.com.cn/order/me-refund-api/refund-list
+POST http://api.climaxbuy.com.cn/order/me-refund-api/refund-details
 Content-Type: application/x-www-form-urlencoded
 
-token=5754a00ac19d215ac86efbdd0cf83db2d4851a5b
+token=d81edb32ae217f19461e996f439cefc65f7f581f
+refund_id=2297

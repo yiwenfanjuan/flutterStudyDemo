@@ -1,3 +1,6 @@
+import 'package:basic_widget_demo1/file/DioHttpDemo.dart';
+import 'package:basic_widget_demo1/file/HttpClientDemo.dart';
+import 'package:basic_widget_demo1/file/HttpDownloadDemo.dart';
 import 'package:flutter/material.dart';
 import 'normal_app_bar.dart';
 import "package:english_words/english_words.dart";
@@ -40,6 +43,8 @@ import 'animation/PageRouteTestDemo.dart';
 import 'package:flutter/cupertino.dart';
 import 'animation/MyPageRouteBuilder.dart';
 import 'animation/HeroAnimationPage1.dart';
+import 'animation/StaggerAnimationTest.dart';
+import 'file/FileDemo.dart';
 
 /**
  * fluter 基础组件 demo1
@@ -527,6 +532,89 @@ class TestRouteWidget1 extends StatelessWidget {
                       },
                     ),
                   ),
+                  Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: RaisedButton(
+                      child: Text("StaggerAniamtion 交错动画演示Demo"),
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context){
+                            return StaggerDemo();
+                          }
+                        ));
+                      },
+                    ),
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: RaisedButton(
+                      child: Text("文件操作演示"),
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context){
+                            return FileOperationRoute();
+                          }
+                        ));
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: RaisedButton(
+                      child: Text("HttpClient网络请求演示"),
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context){
+                            return HttpClientDemoRoute();
+                          }
+                        ));
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: RaisedButton(
+                      child: Text("Dio Http网络请求演示"),
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context){
+                            return DioHttpDemoRouter();
+                          }
+                        ));
+                      },
+                    ),
+                  ),
+
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: RaisedButton(
+                      child: Text("分块下载测试demo"),
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context){
+                            return HttpDownloadDemoRoute();
+                          }
+                        ));
+                      },
+                    ),
+                  ),
+                ],
+
+              ),
+              Column(
+                children: <Widget>[
+                  FlatButton(
+                    child: Text("插件开发--获取电量"),
+                    onPressed: (){
+                      
+                    },
+                  )
                 ],
               ),
             ],
