@@ -21,7 +21,7 @@ class _ScaleAnimationRouteState extends State<ScaleAnimationRoute> with SingleTi
     super.initState();
     //初始化动画控制器
     controller =AnimationController(
-      duration: const Duration(milliseconds: 3000),
+      duration: const Duration(seconds: 3),
       vsync: this,
     );
 

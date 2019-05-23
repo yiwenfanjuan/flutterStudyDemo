@@ -1,6 +1,7 @@
 import 'package:basic_widget_demo1/file/DioHttpDemo.dart';
 import 'package:basic_widget_demo1/file/HttpClientDemo.dart';
 import 'package:basic_widget_demo1/file/HttpDownloadDemo.dart';
+import 'package:basic_widget_demo1/plug/BetteryInfoRoute.dart';
 import 'package:flutter/material.dart';
 import 'normal_app_bar.dart';
 import "package:english_words/english_words.dart";
@@ -612,7 +613,11 @@ class TestRouteWidget1 extends StatelessWidget {
                   FlatButton(
                     child: Text("插件开发--获取电量"),
                     onPressed: (){
-                      
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context){
+                          return BetteryInfoPage();
+                        }
+                      ));
                     },
                   )
                 ],

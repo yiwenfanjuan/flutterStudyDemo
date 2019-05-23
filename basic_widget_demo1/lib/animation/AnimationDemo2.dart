@@ -42,12 +42,12 @@ class _AnimationDemo2State extends State<AnimationDemo2>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(seconds: 5),
+      duration: Duration(seconds: 10),
       vsync: this,
     );
     _animation =
         CurvedAnimation(parent: _controller, curve: Curves.bounceInOut);
-    _animation = Tween(begin: 100.0, end: 300.0).animate(_animation);
+    _animation = Tween(begin: 100.0, end: 500.0).animate(_animation);
     _controller.forward();
   }
 
